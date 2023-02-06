@@ -8,17 +8,17 @@ const buy=async(req,res)=>{
     try{
         const { quantity,street, number, comuna,city} = req.body;
         const username = jwt.extractSub(req);
-        console.log(username);
+        // console.log(username);
         const comprado=req.params.name
         const p = await product.findOne({ name:comprado });
-        console.log(p);
+        // console.log(p);
         const c = new compra();
         if(parseInt(quantity)>0 && username && p){
             c.quantity=parseInt(quantity)
-            c.street=street
-            c.number=number
-            c.comuna=comuna
-            c.city=city
+            // c.street=street
+            // c.number=number
+            // c.comuna=comuna
+            // c.city=city
             const u = await user.findOne({ username: username })
             c.user = u            
             c.product=comprado

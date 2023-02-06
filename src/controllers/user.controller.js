@@ -6,9 +6,9 @@ const signin = async (req, res) => {
   try {
     const filter = {
       username: req.body.username,
-      // password: req.body.password,
       active: true
     }
+
     const u = await user.findOne(filter);
     if (u && u?.validPassword(req.body.password)) {
       return res.json({
@@ -25,7 +25,7 @@ const signin = async (req, res) => {
   } catch (error) {
     return res.json({
       msg: "error en autenticación",
-      details: error.message()
+      details: error.message
     })
   }
 }
@@ -46,6 +46,7 @@ const signup = async (req, res) => {
   try {
 
     const u = new user(req.body);
+    
     u.hashPassword(req.body.password);
     const result = await user.create(u);
     return res.json({
