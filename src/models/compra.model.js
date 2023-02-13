@@ -1,6 +1,7 @@
 const { default: mongoose } = require("mongoose");
 
 const compraSchema = mongoose.Schema({
+    
     quantity:{
       type:Number,
       require:true,
@@ -17,14 +18,14 @@ const compraSchema = mongoose.Schema({
     //   type: String,
     //   require: true,
     // },
-    // city: {
-    //     type: String,
-    //     require: true,
-    // },
-    // date:{
-    //     type:String,
-    //     default: Date,
-    // },
+    price: {
+        type: String,
+        require: true,
+    },
+    date:{
+        type:String,
+        default: Date,
+    },
     product: {
         type: String,
         require: true,

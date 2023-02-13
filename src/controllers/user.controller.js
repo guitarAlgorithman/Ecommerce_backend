@@ -63,8 +63,10 @@ const signup = async (req, res) => {
 
 const findOne = async (req, res) => {
   try {
-    const { username } = req.body;
+    
 
+    const { username } = req.body;
+    console.log(req.body);
     const result = await user.find({ username: username });
     return res.json({ result });
   } catch (error) {
@@ -75,5 +77,18 @@ const findOne = async (req, res) => {
   }
 }
 
+const findOneP = async (req, res) => {
+  try {
+    const username= req.params.username;
+    const result = await user.find({ username: username });
+  
+    return res.json({ result });
+  } catch (error) {
+    return res.status(500).json({
+      msg: "error al consultar el usuario",
+      details: error.message
+    });
+  }
+}
 
-module.exports = { findAll, signup, signin,findOne };
+module.exports = { findAll, signup, signin,findOne,findOneP };
