@@ -21,7 +21,7 @@ const signin = async (req, res) => {
         msg: "unauthorized",
         details: "this user is not authorized for this endpoint"
       })
-    }
+    }git 
   } catch (error) {
     return res.json({
       msg: "error en autenticación",
