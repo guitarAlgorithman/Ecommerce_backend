@@ -11,7 +11,7 @@ Utilización de Mongo Atlas. Solo 3 tablas -> Usuario, Compras y Productos
 
 ### Funcionamiento
 
-JSON Web Token, modelo: base, controlador y ruta (algunas protegidas), login y carro con reducer. Compras con funciones. Todo mediante el uso de contexto.
+JSON Web Token, modelo: base, controlador y ruta (algunas protegidas), login, registro con express.
 
 
 ## Mejoras
